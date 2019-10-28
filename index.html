@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <!-- Lucas Sibbernsen
+            default.html
+            INFO2439
+            Thoendel
+            fall 2019
+        -->
+        <title>Lucas Sibbernsen | INFO 2439 | Boilerplate Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="manifest" href="manifest.json">
+        <link rel="gamer" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="192x192" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="180x180" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="152x152" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="120x120" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="76x76" href="_icons/Gamer.png">
+        <link rel="gamer" sizes="57x57" href="_icons/Gamer.png">
+    </head>
+    <body>
+            <div data-role="page" id="third">
+
+                    <div data-role="header">
+                        <img src="_icons/Gamer.png" alt="gamer" />
+                        <h1>List Updates</h1>
+                    </div>
+        
+                    <div role="main" class="ui-content">
+        
+                        <ul id="theList" data-role="listview" data-inset="true">
+                                <li>List Item</li>
+                                <li>Address</li>
+                        </ul>
+        
+                        <form>
+                            <div data-role="fieldcontain">
+                                <label for="additem">List Item</label>
+                                <input type="text" name="additem" id="additem" value="" />                  
+                            </div>
+                            <div data-role="fieldcontain">
+                                <label for="additem2">Address</label>
+                                <input type="text" name="additem2" id="additem2" value="" />                  
+                            </div>
+                            <input type="button" id="testBtn" value="Add It">
+                        </form>
+                    </div>
+                </div>
+        
+                <script>
+                $("#testBtn").click(function() {
+                    var listItem = $.trim($("#additem").val());
+                    if(listItem == "") return;
+                    $("#theList").append("<li>"+listItem+"</li>");
+                    $("#theList").listview("refresh");
+                    var address = $.trim($("#additem2").val());
+                    if(address == "") return;
+                    $("#theList").append("<li> <a href="+address+">"+address+"</a> </li>"); 
+                    $("#theList").listview("refresh");
+                });
+                </script>        
+    </body>
+</html>

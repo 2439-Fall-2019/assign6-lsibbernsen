@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <!-- Lucas Sibbernsen
+            module10test2
+            INFO2439
+            Thoendel
+            fall 2019
+        -->
+        <title>Lucas Sibbernsen | INFO 2439 | module10test2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="first">
+
+            <div data-role="header">
+                <h1>Swipe Tests</h1>
+            </div>      
+
+        <div role="main" class="ui-content">
+
+            <p>
+                Swipe anywhere on the page...
+            </p>
+
+            <p id="status"></p>
+        </div>
+    </div>
+
+    <script> $("body").bind("swipe", function(e) {
+        $("#status").append("You just did a swipe event!<br/>");
+    });
+
+    $("body").bind("swipeleft", function (e) {
+        $("#status").append("You just did a left swipe event!<br/>");
+    });
+
+    $("body").bind("swiperight", function(e) {
+        $("#status").append("You just did a swipe right event!<br/>");
+    });
+    </script>
+
+
+    }
+        
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <!-- Lucas Sibbernsen
+            test5.html
+            INFO2439
+            Thoendel
+            fall 2019
+        -->
+        <title>Lucas Sibbernsen | INFO 2439 | test5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="third">
+
+            <div data-role="header">
+                <h1>List Updates</h1>
+            </div>
+
+            <div role="main" class="ui-content">
+
+                <ul id="theList" data-role="listview" data-inset="true">
+                    <li>Inital</li>
+                    <li>Item</li>
+                </ul>
+
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="additem">New Item</label>
+                        <input type="test" name="additem" id="additem" value="" />                  
+                    </div>
+                    <input type="button" id="testBtn" value="Add It">
+                </form>
+            </div>
+        </div>
+
+        <script>
+        $("#testBtn").click(function() {
+            var itemToAdd = $.trim($("#additem").val());
+            if(itemToAdd == "") return;
+            $("#theList").append("<li>"+itemToAdd+"</li>");
+        });
+        </script>
+
+    </body>
+</html>
